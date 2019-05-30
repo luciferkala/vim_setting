@@ -65,14 +65,6 @@ set background=dark
 set backspace=indent,eol,start
 colorscheme gruvbox
 set laststatus=2
-map! () ()<ESC>i
-map! (); ();<ESC>hi
-map! [] []<ESC>i
-map! {} {}<ESC>i
-map! {}; {};<BS><ESC>i<CR><ESC>O<BS>
-map! <> <><ESC>i
-map! '' ''<ESC>i
-map! "" ""<ESC>i
 set number
 set backspace=2
 set showmatch
