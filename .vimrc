@@ -1,6 +1,8 @@
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
+set nocompatible
+filetype off
 call plug#begin('~/.vim/plugged')
 
 Plug 'vim-airline/vim-airline-themes'
@@ -14,6 +16,8 @@ Plug 'tpope/vim-surround'
 Plug 'hdima/python-syntax'
 Plug 'klen/python-mode'
 Plug 'valloric/youcompleteme'
+
+Plug 'majutsushi/tagbar'
 
 Plug 'junegunn/vim-easy-align'
 Plug 'mxw/vim-jsx'
@@ -55,7 +59,6 @@ Plug 'prettier/vim-prettier', {
     \ 'ruby',
     \ 'html',
     \ 'swift' ] }
-" Place deoplete first, then autocomplete-flow
 " You will also need the following for function argument completion:
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdcommenter'
@@ -70,7 +73,7 @@ set backspace=2
 set showmatch
 set autowrite
 set title
-
+set ignorecase
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 
@@ -118,7 +121,7 @@ nnoremap <leader>t :YcmCompleter GetType<CR>
 
 nnoremap <leader>p :YcmCompleter GetParent<CR>
 
-let g:airline_theme='fruit_punch'
+let g:airline_theme='molokai'
 
 let g:pymode_rope_complete_on_dot = 0
 let g:pymode_rope_completion = 0
@@ -126,3 +129,7 @@ let g:pymode_rope = 0
 let g:pymode_rope_lookup_project = 0
 let g:pymode_rope_autoimport = 0
 
+let tern#is_show_argument_hints_enabled = 1
+
+let g:Tlist_Ctags_Cmd = '/usr/bin/ctags'
+nmap <F8> :TagbarToggle<CR>
